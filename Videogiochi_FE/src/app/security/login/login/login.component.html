@@ -1,0 +1,97 @@
+<div class="form-container">
+  <div class="form-card">
+    <h2 class="form-heading">{{ isLoginMode ? "Login" : "Register" }}</h2>
+
+    <form (ngSubmit)="onSubmit()" class="login-form" #authForm="ngForm">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          [(ngModel)]="user.username"
+          name="username"
+          required
+          minlength="4"
+        />
+      </div>
+      @if(!isLoginMode){
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="user.email"
+          #emailRef="ngModel"
+          name="email"
+          required
+          pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+          email
+        />
+      </div>
+      <div *ngIf="emailRef.invalid && emailRef.touched" class="text-danger">
+        <small class="error" *ngIf="emailRef.errors?.['required']"
+          >Email is required.</small
+        >
+        <small class="error" *ngIf="emailRef.errors?.['email']">
+          Invalid email format.</small
+        >
+        <small class="error" *ngIf="emailRef.errors?.['pattern']"
+          >Invalid email pattern.</small
+        >
+      </div>
+      }
+
+      <div class="form-group">
+        <label for="password">{{
+          isLoginMode ? "Password" : "Set Password"
+        }}</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="user.password"
+          name="password"
+          required
+          minlength="6"
+        />
+      </div>
+
+      @if(!isLoginMode){
+      <div class="form-group">
+        <label for="password-confirm">Confirm Password:</label>
+        <input
+          type="password"
+          id="password-confirm"
+          [(ngModel)]="checkPass"
+          name="passwordConfirm"
+          required
+          minlength="6"
+        />
+        @if(checkPass){ @if( !checkPassword()){
+        <span class="error"> Passwords do not match </span>
+        } @if(!checkPassLength()) {
+        <p class="error">Passwords must be at least 6 characters long</p>
+        } }
+      </div>
+      }
+
+      <button
+        type="submit"
+        class="submit-btn"
+        [disabled]="
+          !authForm.valid ||
+          (!isLoginMode && (!checkPassword() || !checkPassLength()))
+        "
+        [ngStyle]="{
+          'background-color': !authForm.valid ? 'gray' : '',
+          cursor: !authForm.valid ? 'not-allowed' : ''
+        }"
+      >
+        {{ isLoginMode ? "Login" : "Register" }}
+      </button>
+
+      <button type="button" class="submit-btn" (click)="onSwitchMode()">
+        Switch to {{ isLoginMode ? "Register" : "Login" }}
+      </button>
+    </form>
+  </div>
+</div>

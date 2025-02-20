@@ -1,0 +1,33 @@
+<button (click)="openModal()">Crea Nuova Casa di sviluppo</button>
+
+<app-modal [isOpen]="isModalOpen" (closed)="onModalClosed()">
+  <div class="container">
+    <h2>Crea una nuova casa di sviluppo</h2>
+    <form (ngSubmit)="createCasaDiSviluppo()">
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input
+          type="text"
+          id="nome"
+          class="form-control"
+          [(ngModel)]="newCasaDiSviluppo.nome"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+      <div class="form-group">
+        <label for="sede">Sede:</label>
+        <input
+          type="text"
+          id="sede"
+          class="form-control"
+          [(ngModel)]="newCasaDiSviluppo.sede"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        Crea Casa di Sviluppo
+      </button>
+    </form>
+  </div>
+</app-modal>

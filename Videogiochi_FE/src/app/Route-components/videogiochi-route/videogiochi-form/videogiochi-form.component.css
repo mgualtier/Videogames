@@ -1,0 +1,83 @@
+.form-container {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-container input[type="text"],
+.form-container select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-container input[type="radio"],
+.form-container input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.form-container input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+}
+
+.form-container div {
+  margin-bottom: 10px;
+}
+
+.form-container .option-group {
+  margin-bottom: 20px;
+}
+
+.form-container .option-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: normal;
+  color: #333;
+}
+
+.form-container .option-group input[type="radio"],
+.form-container .option-group input[type="checkbox"] {
+  margin-right: 5px;
+}

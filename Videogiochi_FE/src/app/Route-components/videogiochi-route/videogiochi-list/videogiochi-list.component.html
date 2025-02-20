@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Lista Videogiochi</h1>
+  <ul>
+    @for (gioco of videogioco; track gioco.id) {
+    <li
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 5px;
+      "
+    >
+      <span style="flex-grow: 1">{{ gioco.titolo }}</span>
+      <button
+        type="button"
+        (click)="deleteVideogioco(gioco.id)"
+        style="
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: white;
+          border: 1px solid black;
+          color: black;
+          border-radius: 4px;
+          cursor: pointer;
+          font-weight: bold;
+        "
+        title="Rimuovi questo videogioco"
+      >
+        X
+      </button>
+    </li>
+    }
+  </ul>
+</div>

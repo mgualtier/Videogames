@@ -1,0 +1,266 @@
+.videogiochi-list {
+  width: 100%;
+  padding: 20px;
+}
+
+.swiper-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.swiper-slide {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 370px;
+  margin-right: 15px;
+}
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+  width: 70%;
+  flex-wrap: nowrap;
+}
+
+.add-btn,
+.trailer-btn {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.add-btn {
+  background-color: black;
+  color: white;
+  border: 2px solid #227a9f;
+}
+
+.add-btn:hover {
+  background-color: #227a9f;
+}
+
+.trailer-btn {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+}
+
+.trailer-btn:hover {
+  background-color: #b71c1c;
+}
+
+.videogioco-card {
+  width: 500px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 15px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.videogioco-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  width: 100%;
+}
+
+.overlay h3 {
+  color: white;
+  font-size: 27px;
+  margin-bottom: 5px;
+}
+
+.overlay p {
+  color: white;
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.overlay ul {
+  padding: 0;
+  margin: 5px 0;
+}
+
+.overlay li {
+  color: white;
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+h2.title {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  transition: color 0.3s ease;
+}
+
+h2.title:hover {
+  color: #227a9f;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  border: 2px solid #227a9f;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: border-color 0.3s ease;
+}
+.videogioco-trailer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+.search-container input[type="text"]:focus {
+  border-color: #1a5e7a;
+  outline: none;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  background-color: #227a9f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+  background-color: #1a5e7a;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-right: 15px;
+  border-radius: 15px;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+swiper-container {
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 80%; /* Adatta alle dimensioni dello schermo */
+  max-width: 900px; /* Non più grande di 900px */
+  aspect-ratio: 16 / 9; /* Mantiene le proporzioni */
+}
+
+.modal-video {
+  width: 100%;
+  height: 100%;
+}
+
+.modal.show {
+  display: flex;
+  background-color: none;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  background: none;
+  border: none;
+}

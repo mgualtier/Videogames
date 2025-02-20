@@ -1,0 +1,94 @@
+<button (click)="openModal()">Crea nuovo videogioco</button>
+
+<app-modal [isOpen]="isModalOpen" (closed)="onModalClosed()">
+  <div class="form-container">
+    <h2>Crea un nuovo Videogioco</h2>
+
+    <form (submit)="createVideogioco()">
+      <label for="titolo">Titolo:</label>
+      <input
+        id="titolo"
+        type="text"
+        [(ngModel)]="newVideogioco.titolo"
+        name="titolo"
+        required
+      />
+
+      <label>Piattaforma:</label>
+      @for (piattaforma of piattaforme; track piattaforma.id) {
+      <div>
+        <input
+          type="radio"
+          [value]="piattaforma.id"
+          [(ngModel)]="selectedPiattaformaId"
+          name="piattaforma"
+          required
+        />
+        {{ piattaforma.nome }} - {{ piattaforma.produttore }}
+      </div>
+      }
+
+      <label>Casa di Sviluppo:</label>
+      @for (casa of caseDiSviluppo; track casa.id) {
+      <div>
+        <input
+          type="radio"
+          [value]="casa.id"
+          [(ngModel)]="selectedCasaDiSviluppoId"
+          name="casaDiSviluppo"
+          required
+        />
+        {{ casa.nome }} - {{ casa.sede }}
+      </div>
+      }
+
+      <label>Categorie:</label>
+      @for (categoria of categoria; track categoria.id) {
+      <div>
+        <input
+          type="checkbox"
+          [value]="categoria.id"
+          (change)="onCategoriaChange($event, categoria.id)"
+          name="categorie"
+        />
+        {{ categoria.nome }}
+      </div>
+      }
+      <label for="titolo">Prezzo</label>
+      <input
+        id="prezzo"
+        type="number"
+        [(ngModel)]="newVideogioco.prezzo"
+        name="prezzo"
+        required
+      />
+      <label for="titolo">Quantità disponibile</label>
+      <input
+        id="quantitaDisponibile"
+        type="number"
+        [(ngModel)]="newVideogioco.quantitaDisponibile"
+        name="quantitaDisponibile"
+        required
+      />
+
+      <label for="titolo">Immagine Url:</label>
+      <input
+        id="immagineUrl"
+        type="text"
+        [(ngModel)]="newVideogioco.immagineUrl"
+        name="immagineUrl"
+        required
+      />
+      <label for="titolo">Trailer Url:</label>
+      <input
+        id="trailerUrl"
+        type="text"
+        [(ngModel)]="newVideogioco.trailerUrl"
+        name="trailerUrl"
+        required
+      />
+
+      <button type="submit">Crea Videogioco</button>
+    </form>
+  </div>
+</app-modal>

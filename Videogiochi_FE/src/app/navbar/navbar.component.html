@@ -1,0 +1,105 @@
+<nav
+  class="navbar navbar-expand-lg bg-body-tertiary"
+  style="background: linear-gradient(to right, #141e30, #000000)"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="color: white">Home</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    @if(isLogged()){
+    <a
+      class="nav-link"
+      (click)="onAssistenzaPush()"
+      [routerLink]="isLogged() ? '/assistenza' : '/login'"
+      style="color: white"
+    >
+      Assistenza
+    </a>
+    }
+
+    <div
+      *ngIf="isChatbotOpen"
+      class="modal-overlay"
+      (click)="closeChatbot($event)"
+    >
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="closeChatbot($event)">✖</button>
+        <app-chatbot></app-chatbot>
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <button
+          *ngIf="!isloginMode"
+          id="chatbot"
+          class="navbar-button"
+          (click)="openChatbot()"
+        >
+          ChatBot
+        </button>
+
+        <ng-container *ngIf="isAdmin()">
+          <a
+            class="nav-link active"
+            routerLink="/videogiochi"
+            style="color: white"
+          >
+            Videogiochi
+          </a>
+          <a class="nav-link" routerLink="/categorie" style="color: white">
+            Categorie
+          </a>
+          <a
+            class="nav-link"
+            routerLink="/casa-di-sviluppo"
+            style="color: white"
+          >
+            Case di Sviluppo
+          </a>
+          <a class="nav-link" routerLink="/piattaforme" style="color: white">
+            Piattaforme
+          </a>
+        </ng-container>
+      </div>
+    </div>
+
+    <button class="navbar-button" (click)="onSwitchMode()">
+      {{ isloginMode ? "Login" : "Logout" }}
+    </button>
+    <div class="d-flex align-items-center ms-auto">
+      <div
+        class="spesa-e-carrello d-flex align-items-center p-2"
+        [routerLink]="isLogged() ? '/carrello' : '/login'"
+        (click)="onCarrelloPush()"
+      >
+        <div class="navbar-cart">
+          <span>Totale Carrello: {{ totalCartPrice }}€</span>
+        </div>
+
+        <a class="text-white">
+          <img
+            src="/assets/images/shopping-cart-white-icon.webp"
+            alt="Carrello"
+            width="40"
+            height="40"
+            style="
+              border-radius: 5px;
+              object-fit: contain;
+              transition: transform 0.3s ease, box-shadow 0.3s ease;
+            "
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

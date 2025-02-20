@@ -1,0 +1,42 @@
+body {
+  background: linear-gradient(to right, #141e30, #243b55);
+  color: black;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.title::after {
+  content: "!";
+  animation: blink 1s infinite;
+}
+button {
+  padding: 10px 20px;
+  background-color: #25254b;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #1b192f;
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px rgba(72, 220, 72, 0.5);
+}
+
+/* Disabled button */
+button:disabled {
+  background-color: #dcdcdc;
+  cursor: not-allowed;
+}

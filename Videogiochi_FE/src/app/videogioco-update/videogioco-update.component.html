@@ -1,0 +1,84 @@
+<button (click)="openModal()">Modifica videogioco</button>
+
+<app-modal [isOpen]="isModalOpen" (closed)="onModalClosed()">
+<div class="form-container">
+  <h2>Aggiorna Videogioco</h2>
+
+  <div class="option-group">
+    <label>Seleziona Videogioco:</label>
+    @for ( videogioco of videogiochi; track videogioco.id) {
+    <div>
+      <input
+        type="radio"
+        [value]="videogioco.id"
+        [(ngModel)]="selectedVideogioco.id"
+        name="videogioco"
+        (change)="selectVideogioco(videogioco)"
+        required
+      />
+      {{ videogioco.titolo }}
+    </div>
+    }
+  </div>
+
+  <div *ngIf="selectedVideogioco.id !== null">
+    <label for="titolo">Titolo:</label>
+    <input
+      type="text"
+      id="titolo"
+      [(ngModel)]="selectedVideogioco.titolo"
+      name="titolo"
+      required
+    />
+
+    <div class="option-group">
+      <label>Piattaforma:</label>
+      @for ( piattaforma of piattaforme; track piattaforma.id) {
+      <div>
+        <input
+          type="radio"
+          [value]="piattaforma.id"
+          [(ngModel)]="selectedPiattaformaId"
+          name="piattaforma"
+          required
+        />
+        {{ piattaforma.nome }} - {{ piattaforma.produttore }}
+      </div>
+      }
+    </div>
+
+    <div class="option-group">
+      <label>Casa di Sviluppo:</label>
+      @for ( casa of caseDiSviluppo; track casa.id) {
+      <div>
+        <input
+          type="radio"
+          [value]="casa.id"
+          [(ngModel)]="selectedCasaDiSviluppoId"
+          name="casaDiSviluppo"
+          required
+        />
+        {{ casa.nome }} - {{ casa.sede }}
+      </div>
+      }
+    </div>
+
+    <div class="option-group">
+      <label>Categorie:</label>
+      @for (categoria of categoria; track categoria.id) {
+      <div>
+        <input
+          type="checkbox"
+          [value]="categoria.id"
+          (change)="onCategoriaChange($event, categoria.id)"
+          name="categorie"
+          [checked]="selectedCategorieIds.includes(categoria.id)"
+        />
+        {{ categoria.nome }}
+      </div>
+      }
+    </div>
+
+    <button (click)="updateVideogioco()">Aggiorna</button>
+  </div>
+</div>

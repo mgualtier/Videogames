@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Lista Case di Sviluppo</h1>
+  <ul>
+    @for (casa of casaDiSviluppo; track casa.id) {
+    <li
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 5px;
+      "
+    >
+      <span>{{ casa.nome }} -- {{ casa.sede }}</span>
+      <button
+        type="button"
+        (click)="deleteCasaDiSviluppo(casa.id)"
+        style="
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: white;
+          border: 1px solid black;
+          color: black;
+          border-radius: 4px;
+          cursor: pointer;
+          font-weight: bold;
+        "
+        title="Rimuovi questa casa di sviluppo"
+      >
+        X
+      </button>
+    </li>
+    }
+  </ul>
+</div>

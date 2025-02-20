@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>Lista Categorie</h1>
+  <ul>
+    @for (cate of categoria; track cate.id) {
+    <li
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 5px;
+      "
+    >
+      {{ cate.nome }}
+      <button
+        type="button"
+        (click)="deleteCategoria(cate.id)"
+        style="
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: white;
+          border: 1px solid black;
+          color: black;
+          border-radius: 4px;
+          cursor: pointer;
+          font-weight: bold;
+        "
+        title="Rimuovi questa categoria"
+      >
+        X
+      </button>
+    </li>
+
+    }
+  </ul>
+</div>

@@ -1,0 +1,52 @@
+<div class="container">
+  <h2>Assistenza Ordini</h2>
+
+  <label for="ordine">Seleziona un ordine:</label>
+  <select
+    id="ordine"
+    [(ngModel)]="ordineSelezionato"
+    (change)="onOrdineSelezionato()"
+  >
+    <option *ngFor="let ordine of ordini" [ngValue]="ordine">
+      Ordine #{{ ordine.id }} - {{ ordine.dataCreazione }}
+    </option>
+  </select>
+
+  <div *ngIf="ordineSelezionato">
+    <label for="videogioco">Seleziona un videogioco:</label>
+    <select id="videogioco" [(ngModel)]="videogiocoSelezionato">
+      <option *ngFor="let videogioco of videogiochi" [ngValue]="videogioco">
+        {{ videogioco.titolo }}
+      </option>
+    </select>
+  </div>
+
+  <div *ngIf="videogiocoSelezionato">
+    <label for="email">Inserisci la tua email:</label>
+    <input
+      id="email"
+      #emailRef="ngModel"
+      pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+      type="email"
+      [(ngModel)]="email"
+      required
+    />
+    <div *ngIf="emailRef.invalid && emailRef.touched" class="text-danger">
+      <small class="error" *ngIf="emailRef.errors?.['required']">
+        Email is required.
+      </small>
+      <small class="error" *ngIf="emailRef.errors?.['email']">
+        Invalid email format.
+      </small>
+      <small class="error" *ngIf="emailRef.errors?.['pattern']">
+        Invalid email pattern.
+      </small>
+    </div>
+  </div>
+
+  <div *ngIf="videogiocoSelezionato">
+    <label for="domanda">Scrivi la tua domanda:</label>
+    <textarea id="domanda" [(ngModel)]="domanda"></textarea>
+    <button (click)="inviaDomanda()">Invia</button>
+  </div>
+</div>

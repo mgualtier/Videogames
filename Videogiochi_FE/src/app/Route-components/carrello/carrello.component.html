@@ -1,0 +1,55 @@
+<div class="form-container">
+  <div class="form-card">
+    <form class="login-form" #authForm="ngForm">
+      <div class="form-group">
+        <h1 class="white-text">Carrello</h1>
+        <ul class="cart-list">
+          @if(videogiochiCarrello.length <= 0){
+          <h2>Il carrello è vuoto</h2>
+          } @for(gioco of videogiochiCarrello; track gioco){
+          <li class="cart-item">
+            <div class="item-info">
+              <span class="item-title">{{ gioco.titolo }}</span>
+              <span class="item-details">
+                Quantità: {{ gioco.quantita }} – Prezzo totale:
+                {{ gioco.prezzo * gioco.quantita }}€
+              </span>
+            </div>
+            <button
+              type="button"
+              class="delete-button"
+              (click)="deleteVideogioco(gioco.videogioco.id)"
+            >
+              X
+            </button>
+          </li>
+          }
+        </ul>
+      </div>
+      <div class="form-group">
+        <div class="total">
+          <span class="total-text">Totale: </span>
+          <span class="total-price">{{ calcolaPrezzoTotale() }}€</span>
+        </div>
+        <div class="cart-actions">
+          <button
+            type="button"
+            class="action-btn clear-btn"
+            (click)="deleteAll()"
+          >
+            Svuota Carrello
+          </button>
+
+          <button
+            type="button"
+            class="action-btn confirm-btn"
+            routerLink="/checkout"
+            [disabled]="isCarrelloVuoto()"
+          >
+            Vai al Checkout
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

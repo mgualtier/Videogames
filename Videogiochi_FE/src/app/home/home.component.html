@@ -1,0 +1,74 @@
+<div class="videogiochi-list">
+  <h2 class="title">Ecco i Videogiochi disponibili</h2>
+
+  <div class="search-container">
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      (ngModelChange)="filterVideogiochi()"
+      placeholder="Cerca videogiochi..."
+    />
+  </div>
+
+  <swiper-container
+    class="mySwiper"
+    slides-per-view="3"
+    space-between="30"
+    navigation="true"
+  >
+    @for (videogioco of filteredVideogiochi; track videogioco.id) {
+    <swiper-slide>
+      <div
+        class="videogioco-card"
+        [ngClass]="{ 'default-image': !videogioco.immagineUrl }"
+        [style.backgroundImage]="getSafeImageUrl(videogioco.immagineUrl)"
+      >
+        <div class="overlay">
+          <h3>{{ videogioco.titolo }}</h3>
+          <p><strong>Piattaforma:</strong> {{ videogioco.piattaforma.nome }}</p>
+          <p>
+            <strong>Casa di Sviluppo:</strong>
+            {{ videogioco.casaDiSviluppo.nome }}
+          </p>
+          <p><strong>Categorie:</strong></p>
+          @for (categoria of videogioco.categorie; track categoria.id) {
+          <p>{{ categoria.nome }}</p>
+          }
+          <div class="button-container">
+            <button
+              class="add-btn"
+              (click)="
+                aggiungiAlCarrello(
+                  videogioco.id,
+                  videogioco.quantita || 1,
+                  videogioco.titolo
+                )
+              "
+            >
+              🛒 Aggiungi al carrello
+            </button>
+            <button class="trailer-btn" (click)="apriTrailer(videogioco)">
+              🎬 Vedi Trailer
+            </button>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+    }
+  </swiper-container>
+</div>
+
+@for (videogioco of filteredVideogiochi; track videogioco.id) { @if (modalAperto
+=== videogioco.id) {
+<div class="modal-overlay" (click)="chiudiTrailer()">
+  <div class="modal-content">
+    <iframe
+      class="modal-video"
+      [src]="trailerUrl"
+      frameborder="0"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+} }

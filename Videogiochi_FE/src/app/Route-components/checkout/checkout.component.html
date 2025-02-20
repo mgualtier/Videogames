@@ -1,0 +1,69 @@
+<div class="checkout-wrapper">
+  <div class="checkout-container">
+    <h2>Checkout</h2>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Nome e Cognome</label>
+        <input
+          id="name"
+          formControlName="name"
+          type="text"
+          placeholder="Inserisci nome e cognome"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          formControlName="email"
+          type="email"
+          placeholder="esempio@email.com"
+        />
+      </div>
+      <div class="form-group">
+        <label for="address">Indirizzo di Spedizione</label>
+        <input
+          id="address"
+          formControlName="address"
+          type="text"
+          placeholder="Via Roma, 10 - Milano"
+        />
+      </div>
+      <div class="form-group" *ngIf="clientSecret">
+        <label>Dettagli di pagamento</label>
+        <ngx-stripe-payment
+          nonce="randomNonce"
+          id="payment-element"
+          [hidden]="!clientSecret"
+          [elementsOptions]="stripeElementsOptions"
+          #paymentElement
+        ></ngx-stripe-payment>
+      </div>
+
+      <button type="submit">Conferma Ordine</button>
+    </form>
+  </div>
+
+  <div class="order-summary">
+    <h2>Riepilogo Ordine</h2>
+    <div class="order-items">
+      @for (item of videogiochiCarrello; track item) {
+      <div class="order-item">
+        <div>
+          <p class="item-name">{{ item.titolo }}</p>
+          <p class="item-price">Prezzo: {{ item.prezzo }}€</p>
+          <p class="item-quantity">Quantità: {{ item.quantita }}</p>
+        </div>
+      </div>
+      }
+    </div>
+
+    <div class="order-total">
+      <p>
+        <strong>Totale: {{ calcolaPrezzoTotale() }}€</strong>
+      </p>
+    </div>
+
+    <button id="ritorna" routerLink="/carrello">Torna al Carrello</button>
+  </div>
+</div>

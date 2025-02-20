@@ -1,0 +1,83 @@
+[33mcommit 2dee99b144a3f7f29f5cd1eda6c65165b78a4dc1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: mgualtier <matteo.gualtieri95@gmail.com>
+Date:   Thu Jan 30 10:21:14 2025 +0100
+
+    Added swiper
+
+[33mcommit cbe6e1ea24ec6a8cefac62f806b3e749cc0ea6b5[m
+Author: mgualtier <matteo.gualtieri95@gmail.com>
+Date:   Wed Jan 29 15:57:55 2025 +0100
+
+    Fixed bugs
+
+[33mcommit 037c058b691467f7f0b0e8b8d9f7501e74219c42[m
+Author: mgualtier <matteo.gualtieri95@gmail.com>
+Date:   Wed Jan 29 15:19:29 2025 +0100
+
+    Added update videogiochi
+
+[33mcommit 82b2667db3197eb2c147d2703c10c23a2adedfd1[m
+Author: mgualtier <matteo.gualtieri95@gmail.com>
+Date:   Wed Jan 29 15:04:59 2025 +0100
+
+    Fixed bugs and added cards
+
+[33mcommit e019504dab2421e4c611cb1f973bb84c695e7df7[m
+Author: mgualtier <matteo.gualtieri95@gmail.com>
+Date:   Wed Jan 29 13:28:58 2025 +0100
+
+    Added Piattaforma Modal and Photo Selection
+
+[33mcommit 7c0e78647f417bfce4064f049c1ef6e5f3161cf7[m
+Author: mgualtier <matteo.gualtieri95@gmail.com>
+Date:   Wed Jan 29 10:52:16 2025 +0100
+
+    Added Card Videogioco
+
+[33mcommit 89243d14fcd1c4eb88cfea918d3fced8bd2169b7[m
+Author: mgualtier <matteo.gualtieri95@gmail.com>
+Date:   Mon Jan 27 16:26:38 2025 +0100
+
+    Added Routing
+
+[33mcommit 3fe4903b014d1002b3bd765ef2b020b884c4f2eb[m
+Author: mgualtier <matteo.gualtieri95@gmail.com>
+Date:   Thu Jan 23 19:17:41 2025 +0100
+
+    Fixed cascade bug
+
+[33mcommit 5b1a47291da40a6d3a477f34881f8ca87e930e5d[m
+Author: mgualtier <matteo.gualtieri95@gmail.com>
+Date:   Thu Jan 23 16:27:09 2025 +0100
+
+    Aggiunta update videogioco
+
+[33mcommit 5096939da2032a76ff7731cdf9c17b0d0ffa9a33[m
+Author: mgualtier <matteo.gualtieri95@gmail.com>
+Date:   Thu Jan 23 15:18:44 2025 +0100
+
+    Miglioramento UX
+
+[33mcommit 600752f0043ffa8ec84e8c30cacdf0d417bca132[m
+Author: mgualtier <matteo.gualtieri95@gmail.com>
+Date:   Thu Jan 23 14:42:59 2025 +0100
+
+    Frontend funzionante
+
+[33mcommit 19d686321d5809b60c91676d04914392dc654ac9[m
+Author: mgualtier <matteo.gualtieri95@gmail.com>
+Date:   Thu Jan 23 10:58:33 2025 +0100
+
+    Add frontend files to Videogiochi_FE
+
+[33mcommit d650b4b60dca240627bcbba657078cd68f481e77[m
+Author: mgualtier <matteo.gualtieri95@gmail.com>
+Date:   Thu Jan 23 10:57:40 2025 +0100
+
+    Remove submodule reference for Videogiochi_FE
+
+[33mcommit 0df8d996311aa4c9d3141e700af814c5198a0bef[m
+Author: mgualtier <matteo.gualtieri95@gmail.com>
+Date:   Thu Jan 23 10:46:57 2025 +0100
+
+    Initial commit with backend and frontend

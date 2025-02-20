@@ -1,0 +1,145 @@
+.checkout-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 50px auto;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.checkout-container,
+.order-summary {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #141e30, #243b55);
+}
+
+.checkout-container {
+  max-width: 48%; /* Ensures form stays within the left side */
+}
+
+.order-summary {
+  max-width: 48%; /* Ensures summary stays within the right side */
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  color: white;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+p {
+  color: white;
+  margin: 5px 0;
+  padding: 2px 0;
+}
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+#ritorna {
+  background-color: red;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}
+
+.order-item {
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 5px;
+}
+.order-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.item-name {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.item-price {
+  color: white;
+  margin-bottom: 2px;
+}
+
+.item-quantity {
+  font-size: 14px;
+  color: white;
+  margin-bottom: 2px;
+}
+
+.order-total {
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.stripe-card-container .StripeElement {
+  color: white !important;
+  background-color: white !important;
+}
+
+.stripe-card-container .StripeElement::placeholder {
+  color: black !important;
+}
+.payment-section {
+  background: #2a2a2a;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+#card-element {
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.CardField {
+  color: white !important;
+}
+.CardField * {
+  color: white !important;
+}

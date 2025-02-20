@@ -1,0 +1,10 @@
+{
+  "routes": {
+    "/EsercizioVideogiochi": {},
+    "/EsercizioVideogiochi/auth": {},
+    "/EsercizioVideogiochi/casa-di-sviluppo": {},
+    "/EsercizioVideogiochi/categorie": {},
+    "/EsercizioVideogiochi/piattaforme": {},
+    "/EsercizioVideogiochi/videogiochi": {}
+  }
+}
