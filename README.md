@@ -33,7 +33,7 @@ This project is a web-based e-commerce platform for buying and selling video gam
 ### Backend (Spring Boot)
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo.git
+   git clone https://github.com/mgualtier/Videogames
    ```
 2. Create a `.env` file in the same folder as `application.properties` and add your API keys and database credentials:
    ```sh
