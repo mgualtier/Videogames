@@ -6,9 +6,10 @@ import { CarrelloService } from '../carrello.service';
 import { register } from 'swiper/element/bundle';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { SafeStyle } from '@angular/platform-browser';
+import { CookieBannerComponent } from '../Cookie-banner/cookie-banner.component';
 @Component({
   selector: 'app-home',
-  imports: [NgClass, FormsModule],
+  imports: [NgClass, FormsModule, CookieBannerComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],

@@ -11,8 +11,19 @@ public class User {
     private String password;
     private String email;
     @Column(unique = true)
-    private String stripeCustomerId;  
+    private String stripeCustomerId;
+	private boolean cookieConsent;
+	public boolean isCookieConsent() {
+		return cookieConsent;
+	}
 
+	public void setCookieConsent(boolean cookieConsent) {
+		this.cookieConsent = cookieConsent;
+	}
+
+
+
+	;
  
     public String getStripeCustomerId() {
         return stripeCustomerId;

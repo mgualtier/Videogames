@@ -5,7 +5,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.SequencedCollection;
+
 
 @Service
 public class UserService {
@@ -29,8 +29,12 @@ public class UserService {
     
     public boolean checkUserExist(String username) {	
     	return  userRepository.findByUsername(username).isPresent();
+
     	
-    	
+    }
+
+    public void updateUser(User user) {
+        userRepository.save(user);
     }
 
     public User authenticateUser(String username, String password) {
