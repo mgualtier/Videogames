@@ -57,7 +57,7 @@ This project is a web-based e-commerce platform for buying and selling video gam
    ```
 2. Start the Angular development server:
    ```sh
-   ng serve
+   npm start
    ```
 
 ### Access the Application
